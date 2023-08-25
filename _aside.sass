@@ -1,0 +1,41 @@
+$sidebar-width: 200px
+$sidebar-background-color: #f0f0f0
+
+.container
+  display: flex
+
+  .toggle-sidebar
+    display: none
+  
+  .amazon-sidebar 
+    width: $sidebar-width
+    background-color: $sidebar-background-color
+    padding: 20px
+    transition: transform 0.3s ease-in-out
+    position: fixed
+    top: 0
+    bottom: 0
+    left: -#{ $sidebar-width }
+    z-index: 999
+
+    .toggle-sidebar:checked ~ & 
+      transform: translateX($sidebar-width)
+    
+    .sidebar-title 
+      font-size: 20px
+      margin-bottom: 10px
+
+    .sidebar-list 
+      list-style-type: none
+      padding: 0
+      margin: 0
+
+    .sidebar-item 
+      margin-bottom: 10px
+
+    .sidebar-link 
+      text-decoration: none
+      color: #333
+
+      &:hover 
+        text-decoration: underline
